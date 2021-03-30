@@ -8,16 +8,16 @@ namespace ObserverPatternDemo
 {
     public class Observer : IObserver
     {
-        public string ObserverName { get; private set; }
+        public string SubscriberName { get; private set; }
 
-        public Observer(string name)
+        public Subscriber(string name)
         {
-            ObserverName = name;
+            SubscriberName = name;
         }
 
         public void Update()
         {
-            Console.WriteLine(ObserverName + ": A new product has arrived at the store");
+            Console.WriteLine(SubscriberName + ": New content has arrived");
         }
     }
 }

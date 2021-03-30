@@ -8,7 +8,7 @@ namespace ObserverPatternDemo
 {
     public class Subject : ISubject
     {
-        private List<Observer> observers = new List<Observer>();
+        private List<Observer> subscribers = new List<Observer>();
         private int _int;
 
         public int Inventory
@@ -27,21 +27,21 @@ namespace ObserverPatternDemo
             }
         }
 
-        public void Subscribe(Observer observer)
+        public void Subscribe(Subscriber subscriber)
         {
-            observers.Add(observer);
+            subscribers.Add(subscriber);
         }
 
-        public void Unsubscribe(Observer observer)
+        public void Unsubscribe(Subscriber subscriber)
         {
-            observers.Remove(observer);
+            subscribers.Remove(subscriber);
         }
 
         public void Notify()
         {
-            foreach (var observer in observers)
+            foreach (var subscriber in subscribers)
             {
-                observer.Update();
+                subscriber.Update();
             }
         }
     }
